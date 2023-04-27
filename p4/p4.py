@@ -38,7 +38,7 @@ def find_palindrome(text):
 
 def main():
     
-    print "Finding the largest palindrome made from the product of two 3-digit numbers."
+    print ("Finding the largest palindrome made from the product of two 3-digit numbers.")
     pal = {}
     #start from smallest product of two 3-digit number and go to largest
     for x in range (10000,998001):
@@ -49,8 +49,8 @@ def main():
                 if (len(str(num)) == 3):
                     if (len(str(x/num)) == 3):
                         pal[x] = [num,x/num]
-    print "The largest palindrome made from the product of two 3-digit numbers is",max(pal, key=int),"."
-    print "Its 3-digit factors are", pal[max(pal, key=int)],"."
+    print ("The largest palindrome made from the product of two 3-digit numbers is",max(pal, key=int),".")
+    print ("Its 3-digit factors are", pal[max(pal, key=int)],".")
                         
              
 
