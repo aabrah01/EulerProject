@@ -3,6 +3,7 @@
 # Find the largest palindrome made from the product of two 3-digit numbers.
 # Smallest product of two 3 digit #s is 100*100 = 10,000
 # Largest product of two 3 digit #s is 999*999 = 998,001
+# Answer:The largest palindrome made from the product of two 3-digit numbers is 906609. Its 3-digit factors are [913, 993].
 
 def find_factors(num):
     x=1
@@ -38,7 +39,7 @@ def find_palindrome(text):
 
 def main():
     
-    print ("Finding the largest palindrome made from the product of two 3-digit numbers.")
+    print (f'Finding the largest palindrome made from the product of two 3-digit numbers.')
     pal = {}
     #start from smallest product of two 3-digit number and go to largest
     for x in range (10000,998001):
@@ -47,10 +48,10 @@ def main():
              # Go through factors figure out which ones are 3-digit
              for num in factors:
                 if (len(str(num)) == 3):
-                    if (len(str(x/num)) == 3):
-                        pal[x] = [num,x/num]
-    print ("The largest palindrome made from the product of two 3-digit numbers is",max(pal, key=int),".")
-    print ("Its 3-digit factors are", pal[max(pal, key=int)],".")
+                    if (len(str(int(x/num))) == 3):
+                        pal[x] = [num,int(x/num)]
+    print (f'The largest palindrome made from the product of two 3-digit numbers is {max(pal, key=int)}.')
+    print (f'Its 3-digit factors are {pal[max(pal, key=int)]}.')
                         
              
 
